@@ -20,3 +20,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/源/Java_calculator_Akie/nbproject/private/
+/源/JavaApplication2/nbproject/private/
+/Java_calculator_akie/nbproject/private/
+/Java_calculator_akie/build/
