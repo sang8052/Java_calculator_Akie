@@ -19,18 +19,18 @@ import java.io.FileNotFoundException;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.*;
 
-//  - éŸ³ä¹æ’­æ”¾å™¨ç±» - @author lt - time 2016-7-5 æ¥è‡ª http://blog.csdn.net/c1481118216/article/details/51835634
+//  - ÒôÀÖ²¥·ÅÆ÷Àà - @author lt - time 2016-7-5 À´×Ô http://blog.csdn.net/c1481118216/article/details/51835634
 
 public class MusicPlay 
 {
     Player player;
     File music;
     
-    public  MusicPlay (File file)//æ„é€ æ–¹æ³•  å‚æ•°æ˜¯ä¸€ä¸ª.mp3éŸ³é¢‘æ–‡ä»¶
+    public  MusicPlay (File file)//
     {
         this.music = file;
     }
-    //æ’­æ”¾æ–¹æ³•
+    //²¥·Å·½·¨
     public void play() throws FileNotFoundException, JavaLayerException {
 
             BufferedInputStream buffer = new BufferedInputStream(new FileInputStream(music));
