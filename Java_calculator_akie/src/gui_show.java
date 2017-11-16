@@ -8,7 +8,7 @@
  *
  * @author MR_SZH
  */
-
+  
 import java.awt.Desktop;  
 import java.io.IOException;  
 import java.net.URI;  
@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import javazoom.jl.decoder.JavaLayerException;
 import javax.swing.*;
+import java.util.*;
 
 
 
@@ -26,6 +27,20 @@ public class gui_show extends javax.swing.JFrame {
     /**
      * Creates new form gui_show
      */
+ 
+    public int F_set=1;
+    public int F_old_set=0;
+    public int F_new_set=0;
+    public int Point_c=0;
+    public int outdata=0;
+    
+     public  double PlanNum;
+     public double nowNum; 
+    
+    
+   
+    
+    
     public gui_show() {
         initComponents();
     }
@@ -83,43 +98,138 @@ public class gui_show extends javax.swing.JFrame {
 
         button2.setLabel("Num1");
         button2.setName(""); // NOI18N
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
 
         button3.setLabel("Num4");
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
 
         button4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button4.setLabel("Num7");
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
 
         button5.setLabel("Num2");
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
 
         button6.setLabel("Num5");
+        button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6ActionPerformed(evt);
+            }
+        });
 
         button7.setLabel("Num8");
+        button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7ActionPerformed(evt);
+            }
+        });
 
         button8.setLabel("Num3");
+        button8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button8ActionPerformed(evt);
+            }
+        });
 
         button9.setLabel("Num6");
+        button9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button9ActionPerformed(evt);
+            }
+        });
 
         button10.setLabel("Num9");
+        button10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button10ActionPerformed(evt);
+            }
+        });
 
         button11.setLabel("+/-");
+        button11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonzfActionPerformed(evt);
+            }
+        });
 
         button12.setLabel("Num0");
+        button12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button12ActionPerformed(evt);
+            }
+        });
 
         button13.setLabel(".");
+        button13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonpointActionPerformed(evt);
+            }
+        });
 
         button17.setLabel("AC");
+        button17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button17ActionPerformed(evt);
+            }
+        });
 
         button18.setLabel("C");
+        button18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button18ActionPerformed(evt);
+            }
+        });
 
         button19.setLabel("/");
+        button19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button19ActionPerformed(evt);
+            }
+        });
 
         button20.setLabel("-");
+        button20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button20ActionPerformed(evt);
+            }
+        });
 
         button21.setLabel("*");
+        button21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button21ActionPerformed(evt);
+            }
+        });
 
         button22.setLabel("=");
+        button22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button22ActionPerformed(evt);
+            }
+        });
 
         button23.setLabel("+");
+        button23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button23ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_390_240_cut.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -127,25 +237,30 @@ public class gui_show extends javax.swing.JFrame {
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField2.setText("0.");
         jTextField2.setToolTipText("");
+        jTextField2.setEnabled(false);
 
         button1.setLabel("退格");
         button1.setName(""); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,6 +413,185 @@ public class gui_show extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null,OUT);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        // TODO add your handling code here:
+        PressNum(1);
+    }//GEN-LAST:event_button2ActionPerformed
+
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+        // TODO add your handling code here:
+        PressNum(2);
+    }//GEN-LAST:event_button5ActionPerformed
+
+    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
+        // TODO add your handling code here:
+        PressNum(3);
+    }//GEN-LAST:event_button8ActionPerformed
+
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        // TODO add your handling code here:
+        PressNum(7);
+    }//GEN-LAST:event_button4ActionPerformed
+
+    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+        // TODO add your handling code here:
+        PressNum(5);
+    }//GEN-LAST:event_button6ActionPerformed
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+        // TODO add your handling code here:
+          PressNum(4);
+    }//GEN-LAST:event_button3ActionPerformed
+
+    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
+        // TODO add your handling code here:
+          PressNum(8);
+    }//GEN-LAST:event_button7ActionPerformed
+
+    private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
+        // TODO add your handling code here:
+          PressNum(6);
+    }//GEN-LAST:event_button9ActionPerformed
+
+    private void button10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button10ActionPerformed
+        // TODO add your handling code here:
+          PressNum(9);
+    }//GEN-LAST:event_button10ActionPerformed
+
+    private void buttonzfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonzfActionPerformed
+        // TODO add your handling code here:
+         String str_old=jTextField2.getText();
+         double vaule=Double.valueOf(str_old).doubleValue();
+         vaule=0-vaule;
+         String str_out=""+vaule;
+         jTextField2.setText(str_out);
+        
+    }//GEN-LAST:event_buttonzfActionPerformed
+
+    private void button12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button12ActionPerformed
+        // TODO add your handling code here:
+          PressNum(12);
+    }//GEN-LAST:event_button12ActionPerformed
+
+    private void buttonpointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonpointActionPerformed
+        // TODO add your handling code here:
+        if(Point_c!=1)
+        {String str_old=jTextField2.getText();
+            if (str_old!="0.")
+            {
+            
+            String str_in=str_old+".";
+            jTextField2.setText(str_in);
+            Point_c++;
+            }
+        }
+        
+    }//GEN-LAST:event_buttonpointActionPerformed
+
+    private void button23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button23ActionPerformed
+        // TODO add your handling code here:
+         //加号
+        if(outdata==1){Fun_Do(0);F_old_set=1;outdata=0;}
+        Fun_Do(1);
+    }//GEN-LAST:event_button23ActionPerformed
+
+    private void button20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button20ActionPerformed
+        // TODO add your handling code here:
+        //减号
+          if(outdata==1){Fun_Do(0);F_old_set=2;outdata=0;}
+        Fun_Do(2);
+        
+    }//GEN-LAST:event_button20ActionPerformed
+
+    private void button21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button21ActionPerformed
+        // TODO add your handling code here:
+        //乘号
+         if(outdata==1){Fun_Do(0);F_old_set=3;outdata=0;}
+        Fun_Do(3);
+    }//GEN-LAST:event_button21ActionPerformed
+
+    private void button19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button19ActionPerformed
+        // TODO add your handling code here:
+        //除号
+        if(outdata==1){Fun_Do(0);F_old_set=4;outdata=0;}
+        Fun_Do(4);
+    }//GEN-LAST:event_button19ActionPerformed
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+        //退格
+        String str=jTextField2.getText();
+        str = str.substring(0,str.length()-1);
+        jTextField2.setText(str);
+        
+    }//GEN-LAST:event_button1ActionPerformed
+
+    private void button22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button22ActionPerformed
+        // TODO add your handling code here:
+        Fun_Do(F_old_set);
+	outdata=1;
+    }//GEN-LAST:event_button22ActionPerformed
+
+    private void button18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button18ActionPerformed
+        // TODO add your handling code here:
+         jTextField2.setText("0.");
+         F_set=1;
+    }//GEN-LAST:event_button18ActionPerformed
+
+    private void button17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button17ActionPerformed
+        // TODO add your handling code here:
+      jTextField2.setText("0.");
+         F_set=1;
+         PlanNum=0;
+	nowNum=0;
+       F_old_set=0;
+  
+    }//GEN-LAST:event_button17ActionPerformed
+   
+    private void Fun_Do(int fun_num)
+    {
+        int judge=1;
+        if(F_set==1){F_old_set=F_new_set;}//上一个按钮也是运算符号
+       String str=jTextField2.getText();
+      nowNum=Double.valueOf(str).doubleValue();
+       switch(fun_num)
+	       {
+	          case 0:       PlanNum=nowNum;      break;//空运算
+	          case 1:       PlanNum+=nowNum;     break;//加号
+	          case 2:       PlanNum-=nowNum;     break;//减号
+	          case 3:       PlanNum*=nowNum;     break;//乘号
+			  case 4:       if(nowNum==0){judge=0;}else{PlanNum/=nowNum;}     break;//除号
+			  
+	       }
+	      if(judge==0)
+		  {PlanNum=0;
+	         F_old_set=F_new_set;//把运算符按键的信息写到上一个运算符按键信息中去
+		   F_set=1;
+		jTextField2.setText("除数不能为0");}
+		  else{
+		 F_old_set=F_new_set;//把运算符按键的信息写到上一个运算符按键信息中去
+		     F_set=1;
+                     String temp=""+PlanNum;
+                           
+                     jTextField2.setText(temp);
+		  }
+        
+    }
+   private void PressNum(int num)
+   {
+         if(outdata==1){ F_old_set=0;F_new_set=0; F_set=1;F_old_set=0;}
+     String str=""+num;//将传进来的参数格式化成一个字串
+    if(F_set==1){jTextField2.setText(str);}//如果上一个按下的键是运算符，则消息框中的值直接变成由传入的值转化成的字串
+	else{
+        String str_temp=jTextField2.getText();
+        str_temp=str_temp+str;
+        jTextField2.setText(str_temp);
+    }
+    //如果上一个按下的键不是运算符，则消息框的尾部增加一个由传入的值转化成的字串
+	F_set=0;//标识上一个按下的键不是运算符号
+    }
+   
+   
      public static void openweb(String Goweb){  
         //启用系统默认浏览器来打开网址。  
         try {  
@@ -314,6 +608,7 @@ public class gui_show extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        
          Sys conn_check=new Sys();
          String SQL="select * from calcu";
          conn_check.CONN(SQL);//测试数据库链接

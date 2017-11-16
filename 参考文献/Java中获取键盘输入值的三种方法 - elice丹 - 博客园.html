@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java中获取键盘输入值的三种方法 - elice丹 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=ChDk9h03-S75WEqNhGvXkWireJ5cCWdK1xRM9NIXfnM1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/CodingLife/bundle-CodingLife.css?v=Kn6KiDd259SBCz5TLORaQ9SBElF985T0TAIl-BjTtws1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/CodingLife/bundle-CodingLife-mobile.css?v=Xay8b9tTSw814nBzbOgvS6rrbcxrobMhvHJHdZAO9vI1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/elice/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/elice/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/elice/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'elice', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=Luc6U_bgyPg764kNG7TcM6wg6ibyyUYRDlBLbP3UdnA1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/elice/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/elice/">elice丹</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/elice/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/elice%E4%B8%B9">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/elice/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="http://www.cnblogs.com/elice/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 15&nbsp; </span>
+<span id="stats_article_count">文章 - 7&nbsp; </span>
+<span id="stats-comment_count">评论 - 1</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/elice/p/5662227.html">Java中获取键盘输入值的三种方法</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><div class="articalTitle">
+<h2 id="t_93dc666c0101h00f" class="titName SG_txta">Java中获取键盘输入值的三种方法</h2>
+</div>
+<div id="sina_keyword_ad_area" class="articalTag">
+<table>
+<tbody>
+<tr>
+<td class="blog_tag">&nbsp;</td>
+<td class="blog_class">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sina_keyword_ad_area2" class="articalContent   ">
+<div><span style="font-family: 微软雅黑;">Java</span><span style="font-family: 微软雅黑;">程序开发过程中,需要从键盘获取输入值是常有的事，但Java它偏偏就没有像c语言给我们提供的scanf()，C++给我们提供的cin()获取键盘输入值的现成函数！Java没有提供这样的函数也不代表遇到这种情况我们就束手无策，请你看以下三种解决方法吧：&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">以下将列出几种方法：</span></div>
+<div><span style="font-family: 微软雅黑;">方法一：从控制台接收一个字符，然后将其打印出来</span></div>
+<div><span style="font-family: 微软雅黑;">import java.io.*;</span></div>
+<div>
+<div><span style="font-family: 微软雅黑;">public static void main(String [] args) throws IOException{&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.print("Enter a Char:");&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;char i = (char) System.in.read();&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("your char is :"+i);&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">}&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">虽然此方式实现了从键盘获取输入的字符，但是System.out.read()只能针对一个字符的获取，同时，获取进来的变量的类型只能是char，当我们输入一个数字，希望得到的也是一个整型变量的时候，我们还得修改其中的变量类型，这样就显得比较麻烦。</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">方法二：从控制台接收一个字符串，然后将其打印出来。 在这个题目中，我们需要用到BufferedReader类和InputStreamReader类</span></div>
+<div><span style="font-family: 微软雅黑;">import java.io.*;</span></div>
+<div><span style="font-family: 微软雅黑;">public static void main(String [] args) throws IOException{&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;BufferedReader br = new BufferedReader(new InputStreamReader(System.in));&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String str = null;&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("Enter your value:");&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;str = br.readLine();&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("your value is :"+str);&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">}</span></div>
+<div><span style="font-family: 微软雅黑;">这样我们就能获取我们输入的字符串。</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">方法三：这种方法我认为是最简单，最强大的，就是用Scanner类</span></div>
+<div><span style="font-family: 微软雅黑;">import java.util.Scanner;</span></div>
+<div><span style="font-family: 微软雅黑;">public static void main(String [] args) {&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Scanner sc = new Scanner(System.in);&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("请输入你的姓名：");&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String name = sc.nextLine();&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("请输入你的年龄：");&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int age = sc.nextInt();&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("请输入你的工资：");&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;float salary = sc.nextFloat();&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("你的信息如下：");&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("姓名："+name+"\n"+"年龄："+age+"\n"+"工资："+salary);&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;">}</span></div>
+<div><span style="font-family: 微软雅黑;">这段代码已经表明，Scanner类不管是对于字符串还是整型数据或者float类型的变量，只需做一点小小的改变，就能够实现功能！无疑他是最强大的！</span></div>
+</div>
+<div><span style="font-family: 微软雅黑;">&nbsp;</span></div>
+<div><span style="font-family: 微软雅黑;"><span style="font-size: 24px; color: #fe1f77;">但是，</span>在使用第三种输入方法的时候有一个需要注意的地方，就是nextLine()函数，在io包中有一个和他功能一样的函数我next()函数，他们的功能一样，但是在实现上有什么差别呢，请看下面代码：</span></div>
+<div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">public static void main(String [] args) {&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Scanner sc = new Scanner(System.in);&nbsp;</span></div>
+<div style="line-height: 21px;">
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("请输入你的年龄：");&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int age = sc.nextInt();&nbsp;</span></div>
+</div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("请输入你的姓名：");&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;String name = sc.nextLine();&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("请输入你的工资：");&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;float salary = sc.nextFloat();&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("你的信息如下：");&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.out.println("姓名："+name+"\n"+"年龄："+age+"\n"+"工资："+salary);&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">}</span></div>
+</div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">这段代码和上边第三种实现输入方法给出的例子代 码区别在于，这段代码先执行nextInit()再执行nextLine()，而第三种方法的例子是先执行nextLine()，再执行 nextInit()，当你在运行着两段代码的时候你会发现第三种方法的例子可以实现正常的输入，而这段代码却在输入年龄，敲击enter键后，跳过了输 入姓名，直接到了输入工资这里，（可以自己运行代码看看）这是为什么呢？其实，在执行nextInit()函数之后，敲击了enter回车键，回车符会被 nextLine()函数吸收，实际上是执行了nextLine()函数吸收了输入的回车符（并不是没有执行nextLine函数），前面讲到和 nextLine()功能一样的函数next(),他们的区别就在于:next()函数不会接收回车符和tab，或者空格键等，所以在使用 nextLine()函数的时候，要注意敲击的回车符有个被其吸收，导致程序出现BUG！！！</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">&nbsp;</span></div>
+<div style="line-height: 21px;"><span style="font-family: 微软雅黑;">最后小小的总结一下next()和nextLine()的区别：</span></div>
+<div style="line-height: 21px;">
+<p style="color: #333333; line-height: 26px;"><span style="font-family: 微软雅黑;">在java中，next()方法是不接收空格的，在接收到有效数据前，所有的空格或者tab键等输入被忽略，若有有效数据，则遇到这些键退出。</span><span style="line-height: 26px; font-family: 微软雅黑;">nextLine()可以接收空格或者tab键，其输入应该以enter键结束。</span></p>
+</div>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2016-07-12 06:13</span> <a href='http://www.cnblogs.com/elice/'>elice丹</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=5662227" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(5662227);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=222332,cb_entryId=5662227,cb_blogApp=currentBlogApp,cb_blogUserGuid='569c5659-61de-e411-b908-9dcfd8948a71',cb_entryCreatedDate='2016/7/12 6:13:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2017 elice丹
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+<!--PageEndHtml Block Begin-->
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>
+<!--PageEndHtml Block End-->
+</body>
+</html>

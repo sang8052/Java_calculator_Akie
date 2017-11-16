@@ -18,7 +18,7 @@ import java.sql.SQLException;
 
 public class Sys 
 {
-    public String SYS_VERSION ="Build_1.0.0.2";
+    public String SYS_VERSION ="1.0.0.1.beta";
     public String SYS_WRITTER ="É£Ôóå¾";
     public String SYS_TIME ="2017.11.16";
    

@@ -68,7 +68,7 @@ public class Res {
        SQL="select * from calcu where keyword='"+"message'";
        String [] res_data_2=this.GetRes(SQL);
         JOptionPane.showMessageDialog(null,res_data_2[2] );
-        System.out.println(res_data_2[2]);
+       
         return true;
     }
     
