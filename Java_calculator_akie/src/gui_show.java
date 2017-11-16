@@ -41,6 +41,7 @@ public class gui_show extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel2 = new javax.swing.JPanel();
         button2 = new java.awt.Button();
@@ -69,11 +70,12 @@ public class gui_show extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
 
         jButton1.setText("jButton1");
 
         jButton2.setText("jButton2");
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -263,17 +265,13 @@ public class gui_show extends javax.swing.JFrame {
 
         jMenu1.setText("Akie秋绘计算器");
 
-        jMenuItem2.setMnemonic('d');
-        jMenuItem2.setText("关于计算器（About）");
-        jMenu1.add(jMenuItem2);
-
-        jMenuItem1.setText("版本信息（Version）");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("版本信息（ABOUT）");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
 
@@ -293,9 +291,12 @@ public class gui_show extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+           Sys info=new Sys();
+        String OUT="当前版本："+info.SYS_VERSION+"\n"+"更新于："+info.SYS_TIME+"\n 作者："+info.SYS_WRITTER;
+        JOptionPane.showMessageDialog(null,OUT);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
      public static void openweb(String Goweb){  
         //启用系统默认浏览器来打开网址。  
